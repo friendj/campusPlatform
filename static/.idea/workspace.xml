@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="92e5b84e-559d-4682-a4a3-0b99de5c8669" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/student-center.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1440">
+              <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/myjs/student-center.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="70" selection-start-column="70" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manager-center.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/manager-center/activity-management.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4968">
+              <caret line="276" column="21" selection-start-line="276" selection-start-column="21" selection-end-line="276" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="22" column="69" lean-forward="true" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/manager-center/publish-activity.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1854">
+              <caret line="103" column="6" selection-start-line="3" selection-start-column="4" selection-end-line="103" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>autoPlay</find>
+      <find>divider</find>
+      <find>font-size</find>
+      <find>h1</find>
+      <find>carousel</find>
+      <find>user</find>
+      <find>计算机协会</find>
+      <find>展示</find>
+      <find>搜索</find>
+      <find>fa</find>
+      <find>search</find>
+      <find>btn</find>
+      <find>btn-primary btn-outline-success</find>
+      <find>登录</find>
+      <find>modal-dialog</find>
+      <find>card</find>
+      <find>card mb-4 shadow-sm</find>
+      <find>col-md-3</find>
+      <find>col-sm-12 col-md-4 col-lg-3 col-xl-3</find>
+      <find>col-sm-12 col-md-5 col-lg-3 col-xl-3</find>
+      <find>&lt;small class=&quot;text-muted&quot;&gt;</find>
+      <find>activity-introduce</find>
+      <find>activity_sum</find>
+      <find>&lt;small class=&quot;text-muted text-right col-sm-5&quot;&gt;</find>
+      <find>&lt;small class=&quot;text-muted text-right col-sm-6&quot;&gt;</find>
+      <find>hr</find>
+      <find>exampleModalLongTitle</find>
+      <find>bd-example-modal-lg</find>
+      <find>activity-enroll-situation</find>
+      <find>.bd-example-modal-lg</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>btn-success</replace>
+      <replace>card mb-3 shadow-sm</replace>
+      <replace>col-sm-12 col-md-6 col-lg-3 col-xl-3</replace>
+      <replace>col-sm-12 col-md-5 col-lg-3 col-xl-3</replace>
+      <replace>col-sm-12 col-md-6 col-lg-4 col-xl-4</replace>
+      <replace>&lt;small class=&quot;text-muted text-right col-sm-5&quot;&gt;</replace>
+      <replace>&lt;small class=&quot;text-muted text-right col-sm-6&quot;&gt;</replace>
+      <replace>&lt;small class=&quot;text-muted text-right col-sm-7&quot;&gt;</replace>
+      <replace>activity-enroll-situation</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/js/jquery-3.3.1.min.js" />
+        <option value="$PROJECT_DIR$/css/owl.theme.default.css" />
+        <option value="$PROJECT_DIR$/css/owl.carousel.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/home.css" />
+        <option value="$PROJECT_DIR$/js/home/home.js" />
+        <option value="$PROJECT_DIR$/css/home/navigation-bar.css" />
+        <option value="$PROJECT_DIR$/css/bootstrap/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/navigation-bar.html" />
+        <option value="$PROJECT_DIR$/css/home/home.css" />
+        <option value="$PROJECT_DIR$/js/popper/popper.js" />
+        <option value="$PROJECT_DIR$/css/carousel.css" />
+        <option value="$PROJECT_DIR$/home-bootstrap.html" />
+        <option value="$PROJECT_DIR$/activitydetail.html" />
+        <option value="$PROJECT_DIR$/Societydetail.html" />
+        <option value="$PROJECT_DIR$/activitywall.html" />
+        <option value="$PROJECT_DIR$/Societywall.html" />
+        <option value="$PROJECT_DIR$/messagepull.html" />
+        <option value="$PROJECT_DIR$/enroll.html" />
+        <option value="$PROJECT_DIR$/information.html" />
+        <option value="$PROJECT_DIR$/follow-activity.html" />
+        <option value="$PROJECT_DIR$/follow-org.html" />
+        <option value="$PROJECT_DIR$/certification-download.html" />
+        <option value="$PROJECT_DIR$/management-center.html" />
+        <option value="$PROJECT_DIR$/js/myjs/nav-tab.js" />
+        <option value="$PROJECT_DIR$/js/myjs/student-center.js" />
+        <option value="$PROJECT_DIR$/js/myjs/manager-center.js" />
+        <option value="$PROJECT_DIR$/js/myjs/sheets-editor.js" />
+        <option value="$PROJECT_DIR$/css/mycss/activity.css" />
+        <option value="$PROJECT_DIR$/footer.html" />
+        <option value="$PROJECT_DIR$/header.html" />
+        <option value="$PROJECT_DIR$/message-pull.html" />
+        <option value="$PROJECT_DIR$/society-detail.html" />
+        <option value="$PROJECT_DIR$/home.html" />
+        <option value="$PROJECT_DIR$/activity-detail.html" />
+        <option value="$PROJECT_DIR$/html/student-center/follow-activity.html" />
+        <option value="$PROJECT_DIR$/html/student-center/enroll.html" />
+        <option value="$PROJECT_DIR$/html/student-center/follow-org.html" />
+        <option value="$PROJECT_DIR$/html/student-center/student-information.html" />
+        <option value="$PROJECT_DIR$/html/student-center/certification-download.html" />
+        <option value="$PROJECT_DIR$/html/manager-center/publish-activity.html" />
+        <option value="$PROJECT_DIR$/html/manager-center/recruit-management.html" />
+        <option value="$PROJECT_DIR$/html/manager-center/org-information.html" />
+        <option value="$PROJECT_DIR$/js/myjs/navbar-click.js" />
+        <option value="$PROJECT_DIR$/css/mycss/navbar-click.css" />
+        <option value="$PROJECT_DIR$/manager-center.html" />
+        <option value="$PROJECT_DIR$/activity-wall.html" />
+        <option value="$PROJECT_DIR$/society-wall.html" />
+        <option value="$PROJECT_DIR$/js/myjs/sheets.js" />
+        <option value="$PROJECT_DIR$/html/manager-center/activity-management.html" />
+        <option value="$PROJECT_DIR$/student-center.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>XSLT</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CssNoGenericFontName</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="GCU Organization and Association's Server Platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GCU Server Platform - Dynamic Loading" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last.edited.regexp" value="Sample Text" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\WebStorm Projects\GCU Server Platform" />
+      <recent name="D:\Documents\WebStorm Projects\GCU Server Platform\js\owlcarousel" />
+      <recent name="D:\Documents\WebStorm Projects\GCU Server Platform\js\bootstrap" />
+      <recent name="D:\Documents\WebStorm Projects\GCU Server Platform\js\jquery" />
+      <recent name="D:\Documents\WebStorm Projects\GCU Server Platform\css\home" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Societywall.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GCU Organization and Association's Server Platform/Societywall.html">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.Societywall.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92e5b84e-559d-4682-a4a3-0b99de5c8669" name="Default Changelist" comment="" />
+      <created>1538714639524</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538714639524</updated>
+      <workItem from="1538714641400" duration="7923000" />
+      <workItem from="1538723380498" duration="5348000" />
+      <workItem from="1538729542408" duration="2387000" />
+      <workItem from="1538732033938" duration="627000" />
+      <workItem from="1538732686423" duration="115000" />
+      <workItem from="1538732814921" duration="5619000" />
+      <workItem from="1538738513543" duration="460000" />
+      <workItem from="1538906663451" duration="26882000" />
+      <workItem from="1538960619727" duration="2352000" />
+      <workItem from="1538998009465" duration="118000" />
+      <workItem from="1539013379715" duration="664000" />
+      <workItem from="1539225328971" duration="1701000" />
+      <workItem from="1539227686221" duration="1073000" />
+      <workItem from="1540435618608" duration="4955000" />
+      <workItem from="1541741316117" duration="11898000" />
+      <workItem from="1541757099034" duration="596000" />
+      <workItem from="1541775799933" duration="169000" />
+      <workItem from="1541813490957" duration="13968000" />
+      <workItem from="1541831971879" duration="16562000" />
+      <workItem from="1542006034701" duration="418000" />
+      <workItem from="1542009154349" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="103858000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1920" height="1057" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18277866" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32804233" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32804233" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_code.jquery.com_jquery-3.3.1.js" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdn.bootcss.com_jquery_2.1.1_jquery.js" />
+    <entry file="file://$PROJECT_DIR$/css/bootstrap/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="5842" column="11" selection-start-line="5842" selection-start-column="3" selection-end-line="5842" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/carousel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1659">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html" />
+    <entry file="file://$PROJECT_DIR$/img/home/banner04.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/user-center.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Societycenter.html" />
+    <entry file="file://$PROJECT_DIR$/Societydetail.html" />
+    <entry file="file://$PROJECT_DIR$/activitywall.html" />
+    <entry file="file://$PROJECT_DIR$/Societywall.html" />
+    <entry file="file://$PROJECT_DIR$/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activitydetail.html" />
+    <entry file="file://$PROJECT_DIR$/enroll.html" />
+    <entry file="file://$PROJECT_DIR$/messagepull.html" />
+    <entry file="file://$PROJECT_DIR$/information.html" />
+    <entry file="file://$PROJECT_DIR$/follow-activity.html" />
+    <entry file="file://$PROJECT_DIR$/follow-org.html" />
+    <entry file="file://$PROJECT_DIR$/certification-download.html" />
+    <entry file="file://$PROJECT_DIR$/img/home/card06.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myjs/nav-tab.js" />
+    <entry file="file://$PROJECT_DIR$/js/myjs/manager-center.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myjs/sheets-editor.js" />
+    <entry file="file://$PROJECT_DIR$/css/mycss/activity.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/society-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="122" selection-start-line="10" selection-start-column="122" selection-end-line="10" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/message-pull.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="122" selection-start-line="10" selection-start-column="122" selection-end-line="10" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/student-center/follow-activity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="33" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/student-center/follow-org.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/student-center/student-information.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/student-center/enroll.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/manager-center/recruit-management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/student-center/certification-download.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/manager-center/org-information.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/popper/popper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45702">
+          <caret line="2539" selection-start-line="2539" selection-end-line="2539" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/chart-area-demo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-191" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/datatables-demo.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/sb-admin.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myjs/navbar-click.js" />
+    <entry file="file://$PROJECT_DIR$/css/mycss/navbar-click.css" />
+    <entry file="file://$PROJECT_DIR$/activity-wall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="74" column="29" lean-forward="true" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/society-wall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myjs/sheets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-center.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager-center.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/manager-center/activity-management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4968">
+          <caret line="276" column="21" selection-start-line="276" selection-start-column="21" selection-end-line="276" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="69" lean-forward="true" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/manager-center/publish-activity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1854">
+          <caret line="103" column="6" selection-start-line="3" selection-start-column="4" selection-end-line="103" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myjs/student-center.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="70" selection-start-column="70" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

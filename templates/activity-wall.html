@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8" http-equiv="Content-Type" name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>活动展示页 | 华南理工大学广州学院组织社团服务平台系统</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+    <link rel="stylesheet" href="{% static "css/carousel.css" %}">
+    <link rel="stylesheet" href="{% static "css/mycss/activity.css" %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="{% static "js/jquery/jquery-3.3.1.min.js" %}"></script>
+    <script src="{% static "js/bootstrap/bootstrap.js" %}"></script>
+    <script src="{% static "js/popper/popper.js" %}"></script>
+    <script src="{% static "js/holder/holder.js" %}"></script>
+    <script src="{% static "js/myjs/home.js" %}" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        function place(place) {
+            {#var thisU1 = window.location.protocol;#}
+            {#var thisU2 = window.location.host;#}
+            var thisU3 = window.location.pathname;
+            var Request = new Object();
+            Request = GetRequest();
+            var time = Request['time'];
+            var type = Request['type'];
+            var org = Request['org'];
+            window.location.href = thisU3 + '?place=' + place + '&time=' + time + '&type=' + type + '&org=' + org;
+        }
+
+        function typ(type) {
+            var thisU3 = window.location.pathname;
+            var Request = new Object();
+            Request = GetRequest();
+            var time = Request['time'];
+            var place = Request['place'];
+            var org = Request['org'];
+            window.location.href = thisU3 + '?place=' + place + '&time=' + time + '&type=' + type + '&org=' + org;
+        }
+
+        function org(org) {
+            var thisU3 = window.location.pathname;
+            var Request = new Object();
+            Request = GetRequest();
+            var time = Request['time'];
+            var place = Request['place'];
+            var type = Request['type'];
+            window.location.href = thisU3 + '?place=' + place + '&time=' + time + '&type=' + type + '&org=' + org;
+        }
+
+
+        function tim(time) {
+            var thisU3 = window.location.pathname;
+            var Request = new Object();
+            Request = GetRequest();
+            var place = Request['place'];
+            var type = Request['type'];
+            var org = Request['org'];
+            window.location.href = thisU3 + '?place=' + place + '&time=' + time + '&type=' + type + '&org=' + org;
+        }
+
+
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+
+            return theRequest;
+
+        }
+
+        function follow(id) {
+            $.ajax({
+                type: "post",
+                url: "/activity-wall/",
+                data: {
+                    "follow_id": id,
+                },
+                success: function (msg) {
+                    alert(msg.msg);
+                },
+            });
+        }
+
+
+        function participate(id) {
+            $.ajax({
+                type: "post",
+                url: "/activity-wall/",
+                data: {
+                    "participate_id": id,
+                },
+                success: function (msg) {
+                    alert(msg.msg);
+                },
+            });
+        }
+    </script>
+</head>
+<body>
+{% include "header.html" %}
+
+<main role="main">
+    <div class="container marketing ">
+        <!--展示墙 -->
+        <div>
+            <h1 class="container text-center mt-5 mb-5">活动展示</h1>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">活动类型:</div>
+                        </div>
+                        <select class="form-control" id="type"
+                                onchange="typ(this.options[this.options.selectedIndex].value)">
+                            <option value="">请选择......</option>
+                            <option value="1" {% if type == '1' %}selected{% endif %}>学术</option>
+                            <option value="2" {% if type == '2' %}selected{% endif %}>演讲</option>
+                            <option value="3" {% if type == '3' %}selected{% endif %}>文体</option>
+                        </select>
+                        <br>
+                    </div>
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">选择社团:</div>
+                        </div>
+                        <select class="form-control" id="sel1"
+                                onchange="org(this.options[this.options.selectedIndex].value)">
+                            <option selected>请选择......</option>
+                            {% for i in org %}
+                                <option value="{{ i.id }}"
+                                        {% if i.id == org_id %}selected{% endif %}>{{ i.oName }}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                    </div>
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">开始时间:</div>
+                        </div>
+                        <label for="time"></label><input type="date" class="form-control" id="time" value="{{ time }}"
+                                                         onchange="tim(this.value)">
+                        <br>
+                    </div>
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">活动地点:</div>
+                        </div>
+                        <select class="form-control" id="sel1"
+                                onchange="place(this.options[this.options.selectedIndex].value)">
+                            <option value="">请选择......</option>
+                            <option value="1" {% if place == '1' %}selected{% endif %}>行政楼</option>
+                            <option value="2" {% if place == '2' %}selected{% endif %}>教学楼</option>
+                            <option value="3" {% if place == '3' %}selected{% endif %}>体育馆</option>
+                            <option value="4" {% if place == '4' %}selected{% endif %}>足球场</option>
+
+                        </select>
+                        <br>
+                    </div>
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </form>
+        <div class="row">
+            <!--col-sm-3 col-md-6 col-lg-4 col-xl-2-->
+            {% for i in activity %}
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card mb-4 box-shadow">
+                        <a href="/activity-detail/?aid={{ i.id }}"><img src="/{{ i.img }}"
+                                                                        style="height: 300px;width: 348px;"></a>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <span>活动名称：</span><label for=""> {{ i.aName }} </label><br>
+                            <div class="activity-introduce">
+                                <span>活动简介：</span>
+                                {{ i.introduction }}
+                            </div>
+                            <small class="text-muted">开始时间：{{ i.beginTime }}</small>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"
+                                            onclick="participate({{ i.id }})">报名
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"
+                                            onclick="follow({{ i.id }})">关注
+                                    </button>
+                                </div>
+                                <small class="text-muted">发布时间：{{ i.createTime }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+
+            <!-- /.container -->
+
+        </div>
+        <!-- 分页-->
+        <nav aria-label="Page navigation example" style="margin: auto">
+            <ul class="pagination justify-content-center mb-5">
+                <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                    <a class="page-link"
+                       href="/activity-wall/?page=1&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                       tabindex="-1"><<</a>
+                </li>
+                <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                    <a class="page-link"
+                       href="/activity-wall/?page={{ page|add:-1 }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                       tabindex="-1"><</a>
+                </li>
+                {% if page > page_count|add:-1 and page|add:-4 > 0 %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/activity-wall/?page={{ page|add:-4 }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                           tabindex="-1">{{ page|add:-4 }}</a>
+                    </li>
+                {% endif %}
+                {% if page > page_count|add:-2 and page|add:-3 > 0 %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/activity-wall/?page={{ page|add:-3 }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                           tabindex="-1">{{ page|add:-3 }}</a>
+                    </li>
+                {% endif %}
+                {% if page > 2 and page|add:-2 > 0 %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/activity-wall/?page={{ page|add:-2 }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                           tabindex="-1">{{ page|add:-2 }}</a>
+                    </li>
+                {% endif %}
+                {% if page > 1  and page|add:-1 > 0 %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/activity-wall/?page={{ page|add:-1 }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                           tabindex="-1">{{ page|add:-1 }}</a>
+                    </li>
+                {% endif %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">{{ page }}</a>
+                </li>
+                {% if page <= page_count|add:-1 and page|add:1 <= page_count %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/activity-wall/?page={{ page|add:1 }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                           tabindex="-1">{{ page|add:1 }}</a>
+                    </li>
+                {% endif %}
+                {% if page <= page_count|add:-2  and page|add:2 <= page_count %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/activity-wall/?page={{ page|add:2 }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                           tabindex="-1">{{ page|add:2 }}</a>
+                    </li>
+                {% endif %}
+                {% if page <= 2 and page|add:3 <= page_count %}
+
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/activity-wall/?page={{ page|add:3 }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                           tabindex="-1">{{ page|add:3 }}</a>
+                    </li>
+                    {% if page == 1 and page|add:4 <= page_count %}
+                        <li class="page-item ">
+                            <a class="page-link"
+                               href="/activity-wall/?page={{ page|add:4 }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                               tabindex="-1">{{ page|add:4 }}</a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+                <li class="page-item {% if page == page_count or page_count == '1' %} disabled{% endif %}">
+                    <a class="page-link"
+                       href="/activity-wall/?page={{ page|add:1 }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                       tabindex='-1'>></a>
+                </li>
+                <li class="page-item {% if page == page_count or page_count == '1' %} disabled{% endif %}">
+                    <a class="page-link"
+                       href="/activity-wall/?page={{ page_count }}&place={{ place }}&type={{ type }}&time={{ time }}&org={{ org_id }}"
+                       tabindex='-1'>>></a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- FOOTER -->
+
+
+        {% include "footer.html" %}
+
+    </div>
+</main>
+</body>
+</html>

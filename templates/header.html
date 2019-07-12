@@ -1,0 +1,103 @@
+<div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">首页</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/activity-wall/">活动</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/society-wall/">组织社团</a>
+                </li>
+
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="/student-center/">学生中心</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" data-toggle="modal" data-target="#myModal">
+                        学生中心
+                    </a>
+                </li>
+                {% endif %}
+
+
+                {% if user.is_superuser == 1 %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="/manager-center/">管理后台</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">关于我们</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <div class="btn-group">
+                    <input class="nav-item btn-sm form-control" type="text" placeholder="探索未知……" aria-label="Search">
+                    <button class="nav-item btn btn-success" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                {% if user.is_authenticated %}
+                    <div class="nav-link">{{ user.username }}</div>
+                    <a href="/logout/" class="nav-link" style="color: white;">注销</a>
+                {% else %}
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">
+                        <i class="fas fa-user fa-1x text-white"></i>
+                    </a>
+                {% endif %}
+            </form>
+        </div>
+    </nav>
+    <!--登录模态框-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">登录</h4>
+                </div>
+                <form method="post" action="/login/">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="请输入账号" name="username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" id="exampleInputPassword1"
+                                   placeholder="请输入密码">
+                        </div>
+{#                        <div class="form-check">#}
+{#                            <div class="form-check form-check-inline">#}
+{#                                <input class="form-check-input" type="radio" name="inlineRadioOptions"#}
+{#                                       id="exampleCheckSociety" value="option1">#}
+{#                                <label class="form-check-label" for="exampleCheckSociety">社团</label>#}
+{#                            </div>#}
+{#                            <div class="form-check form-check-inline">#}
+{#                                <input class="form-check-input" type="radio" name="inlineRadioOptions"#}
+{#                                       id="exampleCheckStudent" value="option2">#}
+{#                                <label class="form-check-label" for="exampleCheckStudent">学生</label>#}
+{#                            </div>#}
+{#                        </div>#}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary">登录</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% if error %}
+<script>
+        alert('{{ error }}')
+</script>
+{% endif %}

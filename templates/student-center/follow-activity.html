@@ -1,0 +1,73 @@
+<div id="follow-activity-container">
+    <div>
+        <h1 class="text-center mt-2 mb-5">已关注的活动</h1>
+    </div>
+    <div class="row">
+        {% for i in activity %}
+            {% if i.activity.isDelete == False %}
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card mb-3 shadow-sm">
+                        <a href="/activity-detail/?aid={{ i.activity.id }}"><img class="card-img-top" src="/{{ i.activity.img }}" style="height: 280px" alt="Card image cap"></a>
+                        <div class="card-body">
+                            <h5 class="card-text font-weight-bold text-center">{{ i.activity.organization.oName }}</h5>
+                            <div class="text-center mt-3 mb-3">
+                                <span class="card-text text-center">{{ i.activity.aName }}</span>
+                                <br>
+                                <small class="text-muted" style="text-align: center">
+                                    开始时间: {{ i.activity.beginTime }}</small>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"
+                                            onclick="cancel({{ i.activity.id }})">取消关注
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"
+                                            onclick="participate({{ i.activity.id }})">报名
+                                    </button>
+                                </div>
+                                <small class="text-muted text-right">{{ i.activity.createTime }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>&copy; 2018 华南理工大学广州学院 &middot; </span><a href="#">服务条款</a> &middot; <a
+                        href="#">关于我们</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script type="text/javascript">
+    function cancel(id) {
+        $.ajax({
+            type: "post",
+            url: "/student-center/?page=1",
+            data: {
+                'cancel_id': id,
+            },
+            success: function (msg) {
+                alert(msg['msg']);
+                location.reload();
+            }
+        });
+    }
+
+    function participate(id) {
+        $.ajax({
+            type: "post",
+            url: "/student-center/",
+            data: {
+                'participate_id': id,
+            },
+            success: function (msg) {
+                alert(msg['msg']);
+            },
+        });
+    }
+</script>

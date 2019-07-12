@@ -1,0 +1,310 @@
+<div id="activity-management-container">
+    <div>
+        <h1 class="text-center mt-2 mb-5">活动管理</h1>
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="sheets" class="table table-striped table-bordered"
+                           width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>活动</th>
+                            <th>开始日期</th>
+                            <th>结束日期</th>
+                            <th>报名情况</th>
+                            <th>操作</th>
+                            <th>证明文件</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>活动</th>
+                            <th>开始日期</th>
+                            <th>结束日期</th>
+                            <th>报名情况</th>
+                            <th>操作</th>
+                            <th>证明文件</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr>
+                            <td><a href="#">活动1</a></td>
+                            <td>2018/05/19</td>
+                            <td>2018/05/20</td>
+                            <td>
+                                <a href="#" data-toggle="modal" data-target=".activity-enroll-situation">
+                                    活动1报名情况
+                                </a>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn btn-primary" href="#" data-toggle="modal"
+                                            data-target=".revise-activity-information">修改
+                                    </button>
+                                    <button class="btn btn-danger" href="#" data-toggle="modal"
+                                            data-target=".delete-activity">删除
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <input class="small" type="file" multiple/>
+                                <button class="small btn-success">提交</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">活动2</a></td>
+                            <td>2018/06/19</td>
+                            <td>2018/06/20</td>
+                            <td><a href="#">活动2报名情况</a></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn btn-primary" href="#" data-toggle="modal"
+                                            data-target=".revise-activity-information">修改
+                                    </button>
+                                    <button class="btn btn-danger" href="#" data-toggle="modal"
+                                            data-target=".delete-activity">删除
+                                    </button>
+                                </div>
+                            </td>
+                            <td><a href="#">活动2.doc</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="sticky-footer">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>&copy; 2018 华南理工大学广州学院 &middot; </span><a href="#">服务条款</a> &middot; <a href="#">关于我们</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- 表格中的模态框 -->
+<div class="modal fade activity-enroll-situation" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="activity-enroll-situation">活动1报名情况</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table id="sheets-modal"
+                       class="table table-responsive-lg table-striped table-bordered"
+                       cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>学号</th>
+                        <th>年级</th>
+                        <th>学院</th>
+                        <th>班级</th>
+                        <th>报名时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>姓名</th>
+                        <th>学号</th>
+                        <th>年级</th>
+                        <th>学院</th>
+                        <th>班级</th>
+                        <th>报名时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <tr>
+                        <td>张三</td>
+                        <td>2016100981XX</td>
+                        <td>2016级</td>
+                        <td>计算机工程学院</td>
+                        <td>软件工程2班</td>
+                        <td>2018.10.11</td>
+                        <td><a href="#">修改</a>/<a href="#">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td>王老五</td>
+                        <td>2016100981XX</td>
+                        <td>2016级</td>
+                        <td>计算机工程学院</td>
+                        <td>软件工程2班</td>
+                        <td>2018.10.11</td>
+                        <td><a href="#">修改</a>/<a href="#">删除</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    关闭
+                </button>
+                <button type="button" class="btn btn-primary">保存修改</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 修改活动信息的模态框 -->
+<div class="modal fade revise-activity-information" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="revise-activity-information">修改活动信息</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container marketing">
+                    <form>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label display-4">活动标题</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="请输入活动标题">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">活动时间</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" id="inputPassword3" placeholder="请输入活动时间">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">活动地点</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="请输入活动地点">
+                            </div>
+                        </div>
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-2 pt-0">活动类型</legend>
+                                <div class="col-sm-9 ml-3">
+                                    <div class="row">
+                                        <div class="form-check col-sm-2">
+                                            <input class="form-check-input" type="radio" name="gridRadios"
+                                                   id="gridRadios1"
+                                                   value="option1" checked>
+                                            <label class="form-check-label" for="gridRadios1">
+                                                文体
+                                            </label>
+                                        </div>
+                                        <div class="form-check col-sm-2">
+                                            <input class="form-check-input" type="radio" name="gridRadios"
+                                                   id="gridRadios2"
+                                                   value="option2">
+                                            <label class="form-check-label" for="gridRadios2">
+                                                演讲
+                                            </label>
+                                        </div>
+                                        <div class="form-check disabled col-sm-2">
+                                            <input class="form-check-input" type="radio" name="gridRadios"
+                                                   id="gridRadios3"
+                                                   value="option3" disabled>
+                                            <label class="form-check-label" for="gridRadios3">
+                                                学术科技
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">主办方</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="请输入主办方">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">负责人</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="请输入负责人">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">联系方式</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="请输入联系方式">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">活动简介</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="请输入活动简介">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">活动详情</label>
+                            <div class="col-sm-10">
+                                <label for="exampleFormControlTextarea1"></label><textarea class="form-control"
+                                                                                           id="exampleFormControlTextarea1"
+                                                                                           rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">宣传图片</label>
+                            <div class="col-sm-10">
+                                <label>请选择一个图像文件：</label>
+                                <input type="file" id="pic_selector" multiple/> <!--multiple，可选择多张图片-->
+                                <button>提交</button>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row text-center">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary pl-3 pr-3">确认发布</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                关闭
+            </button>
+            <button type="button" class="btn btn-primary">保存修改</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- 删除活动的模态框 -->
+<div class="modal fade delete-activity" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="delete-activity">删除活动</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                删除后将无法恢复，请谨慎操作！
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    关闭
+                </button>
+                <button type="button" class="btn btn-danger">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/myjs/sheets.js" type="text/javascript"></script>
+
+

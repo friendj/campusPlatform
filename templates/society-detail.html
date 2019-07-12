@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+        {% load staticfiles %}
+	    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	    <title>社团详细页 | 华南理工大学广州学院组织社团服务平台系统</title>
+	    <link rel="stylesheet" href="{% static "css/bootstrap/bootstrap.css" %}">
+	    <link rel="stylesheet" href="{% static "css/home.css" %}">
+	    <link rel="stylesheet" href="{% static "css/carousel.css" %}">
+	    <link rel="stylesheet" href="{% static "css/mycss/activity.css" %}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+			  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	    <script src="{% static "js/jquery/jquery-3.3.1.min.js" %}"></script>
+	    <script src="{% static "js/bootstrap/bootstrap.js" %}"></script>
+	    <script src="{% static "js/popper/popper.js" %}"></script>
+	    <script src="{% static "js/holder/holder.js" %}"></script>
+	  	<script src="{% static "js/myjs/home.js" %}" type="text/javascript" charset="utf-8"></script>
+	</head>
+    <script type="text/javascript">
+    function follow(id) {
+            $.ajax({
+                type: "post",
+                url: "/activity-wall/",
+                data: {
+                    "follow_id": id,
+                },
+                success: function (msg) {
+                    alert(msg.msg);
+                },
+            });
+        }
+
+
+        function participate(id) {
+            $.ajax({
+                type: "post",
+                url: "/activity-wall/",
+                data: {
+                    "participate_id": id,
+                },
+                success: function (msg) {
+                    alert(msg.msg);
+                },
+            });
+        }
+    </script>
+	<body>
+
+    {% include "header.html" %}
+	
+	<main role="main">
+	    <!-- 内容区 -->
+	    <div class="container marketing ">
+	        <h1 class="filter">社团介绍</h1>
+	     
+	        <!--部门展示墙 -->
+	        <div class="container-fluid album bg-light">
+	        	<br/><br/>
+	        	<div>
+                    <h2 class="text-center mb-5">社团活动展示</h2>
+                </div>
+				<div class="row">
+		        	<!--col-sm-3 col-md-6 col-lg-4 col-xl-2-->
+                    {% for i in activity %}
+		            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+		                <div class="card mb-4 box-shadow">
+		                    <a href="/activity-detail/?aid={{ i.id }}"><img src="/{{ i.img }}" style="height: 300px;width: 338px;"></a>
+		                    <div class="card-body">
+		                        <p class="card-text">
+		                            <span>活动名称：</span><label for="">{{ i.aName }}</label><br>
+		                        <div class="activity-introduce">
+		                            <span>活动简介：</span>
+		                            {{ i.introduction }}
+		                        </div>
+                                <small class="text-muted">开始时间：{{ i.beginTime }}</small>
+		                        </p>
+		                        <div class="d-flex justify-content-between align-items-center">
+		                            <div class="btn-group">
+		                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="participate({{ i.id }})">报名</button>
+		                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="follow({{ i.id }})">关注</button>
+		                            </div>
+		                            <small class="text-muted">发布时间：{{ i.createTime }}</small>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+                    {% endfor %}
+
+		        </div><!-- /.container -->
+		        
+		        <!-- 分页-->
+		        <nav aria-label="Page navigation example" style="margin: auto">
+            <ul class="pagination justify-content-center mb-5">
+                <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                    <a class="page-link"
+                       href="/society-detail/?oid={{ oid }}&page=1"
+                       tabindex="-1"><<</a>
+                </li>
+                <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                    <a class="page-link"
+                       href="/society-detail/?oid={{ oid }}&page={{ page|add:-1 }}"
+                       tabindex="-1"><</a>
+                </li>
+                {% if page > page_count|add:-1 and page|add:-4 > 0 %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/society-detail/?oid={{ oid }}&page={{ page|add:-4 }}"
+                           tabindex="-1">{{ page|add:-4 }}</a>
+                    </li>
+                {% endif %}
+                {% if page > page_count|add:-2 and page|add:-3 > 0 %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/society-detail/?oid={{ oid }}&page={{ page|add:-3 }}"
+                           tabindex="-1">{{ page|add:-3 }}</a>
+                    </li>
+                {% endif %}
+                {% if page > 2 and page|add:-2 > 0 %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/society-detail/?oid={{ oid }}&page={{ page|add:-2 }}"
+                           tabindex="-1">{{ page|add:-2 }}</a>
+                    </li>
+                {% endif %}
+                {% if page > 1  and page|add:-1 > 0 %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/society-detail/?oid={{ oid }}&page={{ page|add:-1 }}"
+                           tabindex="-1">{{ page|add:-1 }}</a>
+                    </li>
+                {% endif %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">{{ page }}</a>
+                </li>
+                {% if page <= page_count|add:-1 and page|add:1 <= page_count %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/society-detail/?oid={{ oid }}&page={{ page|add:1 }}"
+                           tabindex="-1">{{ page|add:1 }}</a>
+                    </li>
+                {% endif %}
+                {% if page <= page_count|add:-2  and page|add:2 <= page_count %}
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/society-detail/?oid={{ oid }}&page={{ page|add:2 }}"
+                           tabindex="-1">{{ page|add:2 }}</a>
+                    </li>
+                {% endif %}
+                {% if page <= 2 and page|add:3 <= page_count %}
+
+                    <li class="page-item ">
+                        <a class="page-link"
+                           href="/society-detail/?oid={{ oid }}&page={{ page|add:3 }}"
+                           tabindex="-1">{{ page|add:3 }}</a>
+                    </li>
+                    {% if page == 1 and page|add:4 <= page_count %}
+                        <li class="page-item ">
+                            <a class="page-link"
+                               href="/society-detail/?oid={{ oid }}&page={{ page|add:4 }}"
+                               tabindex="-1">{{ page|add:4 }}</a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+                <li class="page-item {% if page == page_count or page_count == '1' %} disabled{% endif %}">
+                    <a class="page-link"
+                       href="/society-detail/?oid={{ oid }}&page={{ page|add:1 }}"
+                       tabindex='-1'>></a>
+                </li>
+                <li class="page-item {% if page == page_count or page_count == '1' %} disabled{% endif %}">
+                    <a class="page-link"
+                       href="/society-detail/?oid={{ oid }}&page={{ page_count }}"
+                       tabindex='-1'>>></a>
+                </li>
+            </ul>
+        </nav>
+		        <br/><br/><br/>
+			</div>
+	        
+	    
+	    	
+	        
+	        
+	        <hr class="featurette-divider">
+	        <div id="">
+	        	
+	        </div>
+	        <!-- 人员组成 -->
+	        <!--<h2 class="filter">人员组成</h2>-->
+{#	        <div>#}
+{#                <h2 class="text-center mb-5 ">社团人员组成</h2>#}
+{#            </div>#}
+{#	        <div class="row">#}
+{#	            <div class="col-lg-4">#}
+{#	                <img class="rounded-circle" src="img/society/society01.jpg" alt="Generic placeholder image" width="140" height="140">#}
+{#	                <h3>正部长</h3>#}
+{#	                <p>姓名:<span>梁浩瀚</span></p>#}
+{#	                <p>联系方式:<span>12345678911</span></p>#}
+{#	            </div><!-- /.col-lg-4 -->#}
+{#	            <div class="col-lg-4">#}
+{#	                <img class="rounded-circle" src="img/society/society04.bmp" alt="Generic placeholder image" width="140" height="140">#}
+{#	                <h3>部长</h3>#}
+{#	                <p>姓名:<span>梁浩瀚</span></p>#}
+{#	                <p>联系方式:<span>5208208820</span></p>#}
+{#	            </div><!-- /.col-lg-4 -->#}
+{#	            <div class="col-lg-4">#}
+{#	                <img class="rounded-circle" src="img/society/society03.bmp" alt="Generic placeholder image" width="140" height="140">#}
+{#	                <h3>部长</h3>#}
+{#	                <p>姓名:<span>梁浩瀚</span></p>#}
+{#	                <p>联系方式:<span>5208208820</span></p>#}
+{#	                #}
+{#	            </div><!-- /.col-lg-4 -->#}
+{#	        </div><!-- /.row -->#}
+	
+{#	        <hr class="featurette-divider">#}
+	
+	    </div><!-- /.container-内容区 -->
+	
+	    <!-- FOOTER -->
+
+        {% include "footer.html" %}
+
+	</main>
+	</body>
+</html>

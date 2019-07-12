@@ -1,0 +1,54 @@
+<div id="follow-org-container">
+    <div>
+        <h1 class="text-center mt-2 mb-5">已关注的组织和社团</h1>
+    </div>
+    <div class="row">
+        {% for i in organization %}
+            {% if i.organization.isDelete == False %}
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card mb-4 shadow-sm">
+                        <a href="/society-detail/?oid={{ i.organization.id }}"> <img class="card-img-top" src="/static/img/society/society01.jpg" alt="Card image cap"
+                             style="height: 280px"></a>
+                        <div class="card-body">
+                            <h5 class="card-text font-weight-bold text-center">{{ i.organization.oName }}</h5>
+                            <span>社团简介：</span>
+                            {{ i.organization.introduction }}
+                            <br>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"
+                                        onclick="cancel({{ i.organization.id }})">取消关注
+                                </button>
+                                {#                        <small class="text-muted">关注于 2018年10月16日</small>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <footer class="sticky-footer">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>&copy; 2018 华南理工大学广州学院 &middot; </span><a href="#">服务条款</a> &middot; <a href="#">关于我们</a></p>
+            </div>
+        </div>
+    </footer>
+</div>
+<script type="text/javascript">
+    function cancel(id) {
+        $.ajax({
+            type: "POST",
+            url: "/student-center/?page=3",
+            data: {
+                'cancel_follow_org': id,
+            },
+            success: function (msg) {
+                alert(msg['msg']);
+                location.reload();
+            }
+        });
+    }
+</script>
+
+
+

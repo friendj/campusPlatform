@@ -1,0 +1,30 @@
+.filter {
+    margin: 20px 0;
+}
+
+.one {
+    width: 400px;
+    margin: 50px auto 0 auto;
+    /* text-align: center; */
+}
+
+.two {
+    width: 200px;
+
+    /* padding-left: 50px; */
+    /* background-color: rebeccapurple; */
+    /* margin:20px auto; */
+}
+
+.text-success {
+    /* padding-right: 30px; */
+}
+
+.activity-introduce {
+    width: 100%;
+    height: 100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

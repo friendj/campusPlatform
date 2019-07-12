@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>社团详细页|华南理工大学广州学院组织社团服务平台系统</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+    <link rel="stylesheet" href="{% static "css/carousel.css" %}">
+    <link rel="stylesheet" href="{% static "css/mycss/activity.css" %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="{% static "js/jquery/jquery-3.3.1.min.js" %}"></script>
+    <script src="{% static "js/bootstrap/bootstrap.js" %}"></script>
+    <script src="{% static "js/popper/popper.js" %}j"></script>
+    <script src="{% static "js/holder/holder.js" %}"></script>
+    <script src="{% static "js/myjs/home.js" %}" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<script type="text/javascript">
+    function follow(id) {
+            $.ajax({
+                type: "post",
+                url: "/activity-wall/",
+                data: {
+                    "follow_id": id,
+                },
+                success: function (msg) {
+                    alert(msg.msg);
+                    location.reload();
+                },
+            });
+        }
+
+
+        function participate(id) {
+            $.ajax({
+                type: "post",
+                url: "/activity-wall/",
+                data: {
+                    "participate_id": id,
+                },
+                success: function (msg) {
+                    alert(msg.msg);
+                    location.reload();
+                },
+            });
+        }
+</script>
+
+{% include "header.html" %}
+
+<main role="main">
+    <!-- 内容区 -->
+    <div class="container marketing">
+        {% for i in activity %}
+            <div class="container-fluid">
+                <hr class="featurette-divider">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4">
+                        <img src="/{{ i.img }}" class="card-img-top">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-7 col-xl-8">
+                        <div><label class="text-success">活动标题：</label><span>{{ i.aName }}</span></div>
+                        <div><label class="text-success">活动时间：</label><span>{{ i.beginTime }}</span></div>
+                        <div><label class="text-success">活动地点：</label><span>{{ i.place }}</span></div>
+                        <div><label class="text-success">主办方：</label><span>{{ i.organization.oName }}</span></div>
+                        <div><label class="text-success">活动类型：</label><span>{{ i.type }}</span></div>
+                        <div><label class="text-success">发布日期：</label><span>{{ i.createTime }}</span></div>
+                        <div>
+                            <label class="text-success">报名人数：</label><span>{{ i.participate_num }}</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label class="text-success">关注人数：</label><span>{{ i.follow_num }}</span>
+                        </div>
+                        <div><label class="text-success">活动简介：</label><span>{{ i.introduction }}</span></div>
+                        <div><label class="text-success">活动详情：</label><span>{{ i.detail }}</span></div>
+                        <hr>
+                        <div class="btn-group two">
+                            <button type="button" class="btn btn-success" onclick="participate({{ i.id }})">报名</button>
+                            <button type="button" class="btn btn-danger" onclick="follow({{ i.id }})">关注</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        {% endfor %}
+        {#	        <div class="row featurette ">#}
+        {#	            <div class="col-md-8 order-md-2 card  order-md-2">#}
+        {#	                <div><label class="text-success">活动标题：</label><span>PS设计大赛</span></div>#}
+        {#	                <div><label class="text-success">活动时间：</label><span>2018-10-26</span></div>#}
+        {#	                <div><label class="text-success">活动地点：</label><span>图书馆报告厅</span></div>                #}
+        {#	                <div><label class="text-success">主办方：</label><span>计算机团委学生会</span></div>#}
+        {#	                <div><label class="text-success">活动类型：</label><span>学术</span></div>#}
+        {#	                <div><label class="text-success">发布日期:</label><span>2018-10-26</span></div>#}
+        {#	                <div>#}
+        {#	                    <label class="text-success">报名人数：</label><span>100</span>#}
+        {#	                    <label class="text-success">关注人数：</label><span>100</span>#}
+        {#	                </div>#}
+        {#	                <div><label class="text-success">活动简介:</label><span>各班级想要参加的同学们先到各班的文体委员处报名</span></div>#}
+        {#	                <div class="btn-group two">#}
+        {#	                    <button type="button" class="btn btn-success ">报名</button>#}
+        {#	                    <button type="button" class="btn btn-danger">关注</button>#}
+        {#	                </div>#}
+        {#	            </div>#}
+        {#	            <div class="col-md-4 order-md-1">#}
+        {#	                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/300x300/auto" alt="Generic placeholder image">#}
+        {#	            </div>#}
+        {#	        </div>#}
+        {#	    #}
+        {#	        <hr class="featurette-divider">#}
+        {#	        <div class="row featurette">#}
+        {#	            <div class="col-md-7 order-md-2 order-md-1">#}
+        {#	                <div><label class="text-success">活动标题：</label><span>PS设计大赛</span></div>#}
+        {#	                <div><label class="text-success">活动时间：</label><span>2018-10-26</span></div>#}
+        {#	                <div><label class="text-success">活动地点：</label><span>图书馆报告厅</span></div>                #}
+        {#	                <div><label class="text-success">主办方：</label><span>计算机团委学生会</span></div>#}
+        {#	                <div><label class="text-success">活动类型：</label><span>学术</span></div>#}
+        {#	                <div><label class="text-success">发布日期:</label><span>2018-10-26</span></div>#}
+        {#	                <div>#}
+        {#	                    <label class="text-success">报名人数：</label><span>100</span>#}
+        {#	                    <label class="text-success">关注人数：</label><span>100</span>#}
+        {#	                </div>#}
+        {#	                <div><label class="text-success">活动简介:</label><span>各班级想要参加的同学们先到各班的文体委员处报名</span></div>#}
+        {#	                <div class="btn-group two">#}
+        {#	                    <button type="button" class="btn btn-success ">报名</button>#}
+        {#	                    <button type="button" class="btn btn-danger">关注</button>#}
+        {#	                </div>#}
+        {#	            </div>#}
+        {#	            <div class="col-md-5  order-md-2">#}
+        {#	                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/300x300/auto" alt="Generic placeholder image">#}
+        {#	            </div>#}
+        {#	        </div>#}
+
+    </div>
+    <!--内容区 -->
+
+    <!-- FOOTER -->
+    {% include "footer.html" %}
+</main>
+</body>
+</html>

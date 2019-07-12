@@ -1,0 +1,61 @@
+<h1 class="text-center mt-2 mb-3">下载活动证明</h1>
+{#<div class="text-right mr-5 mb-2">#}
+{#    <button type="button" class="btn btn-primary">一键下载</button>#}
+{#</div>#}
+<div id="certification-download-container">
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="sheets" class="table table-striped table-bordered"
+                       width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>活动</th>
+                        <th>主办方</th>
+                        <th>开始日期</th>
+                        <th>文件下载</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>活动</th>
+                        <th>主办方</th>
+                        <th>开始日期</th>
+                        <th>文件下载</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for i in activity %}
+                        <tr>
+                            <td><a href="/activity-detail/?aid={{ i.activity.id }}">{{ i.activity.aName }} </a></td>
+                            <td><a href="/society-detail/?oid={{ i.activity.organization.id }}">{{ i.activity.organization.oName }}</a></td>
+                            <td>{{ i.activity.beginTime }}</td>
+                            <td>
+                                {% if i.activity.file != '' %}
+                                <form method="post" action="/student-center/?page=4" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <button type="submit" name="act_file_id"
+                                            value="{{ i.activity.id }}">{{ i.activity.aName }} 证明文件
+                                    </button>
+                                </form>
+                                {% else %}
+                                    无证明文件
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer class="sticky-footer">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>&copy; 2018 华南理工大学广州学院 &middot; </span><a href="#">服务条款</a> &middot; <a href="#">关于我们</a>
+            </div>
+        </div>
+    </footer>
+</div>
+{% load staticfiles %}
+<script src="{% static "js/myjs/sheets.js" %}"></script>

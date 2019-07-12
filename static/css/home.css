@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "Hiragino Sans GB W3";
+    src: url("../font/Hiragino Sans GB/Hiragino Sans GB W3.ttf");
+}
+
+@font-face {
+    font-family: "Hiragino Sans GB W6";
+    src: url("../font/Hiragino Sans GB/Hiragino Sans GB W6.ttf");
+}
+
+body {
+    font-family: "Hiragino Sans GB", sans-serif;
+}
+
+.title {
+    font-family: "Hiragino Sans GB W6", sans-serif;
+    font-size: 55px;
+    padding-bottom: 5%;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.subhead {
+    font-family: "Hiragino Sans GB W3", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding-bottom: 5%;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
