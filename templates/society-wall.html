@@ -65,7 +65,7 @@
             {% for i in organization %}
                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
                     <div class="card mb-4 box-shadow">
-                        <a href="/society-detail/?oid={{ i.id }}"><img src="{{ i.img }}" style="height: 300px;width: 348px;"></a>
+                        <a href="/society-detail/?oid={{ i.id }}"><img src="/{{ i.img }}" style="height: 300px;width: 348px;"></a>
                         <div class="card-body">
                             <p class="card-text">
                                 <span>社团名称：</span><label for="">{{ i.oName }} </label><br>
