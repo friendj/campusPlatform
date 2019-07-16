@@ -17,7 +17,8 @@ import os
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    activity = Activity.objects.order_by('?')[:6]
+    return render(request, 'home.html', {'activity': activity})
 
 
 def login(request):
@@ -27,21 +28,23 @@ def login(request):
         password = request.POST.get('password', '')
         if username is None or username == '':
             error = '用户名不能为空'
-            return render(request, 'home.html', {'error': error})
+            # return render(request, 'home.html', {'error': error})
         elif password is None or password == '':
             error = '密码不能为空'
-            return render(request, 'home.html', {'error': error})
+            # return render(request, 'home.html', {'error': error})
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             if user.is_active:
                 auth.login(request, user)
-                return render(request, 'home.html', {'error': error})
+                # 一周后登录过期
+                request.session.set_expiry(24 * 60 * 60 * 7)
+                # return render(request, 'home.html', {'error': error})
             else:
                 error = '用户名错误'
-                return render(request, 'home.html', {'error': error})
+                # return render(request, 'home.html', {'error': error})
         else:
             error = '用户名或密码错误'
-            return render(request, 'home.html', {'error': error})
+    return render(request, 'home.html', {'error': error})
 
     # return render(request, 'home.html')
 
@@ -598,4 +601,3 @@ def org_detail(request):
             return HttpResponse(json.dumps(msg), content_type="application/json")
 
     return render(request, 'society-detail.html', {'activity': act, 'page': page, 'page_count': page_count, 'oid': oid})
-
