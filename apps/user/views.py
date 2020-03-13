@@ -2,7 +2,10 @@
 from django.shortcuts import render
 from django.contrib import auth
 from django.shortcuts import redirect
-from .models import Follow, Participate, Organization, Activity
+from .models import Follow
+from .models import Participate
+from .models import Organization
+from .models import Activity
 from .models import UserProfile
 from django.views.decorators.csrf import csrf_exempt
 from django.http.response import HttpResponse
@@ -17,13 +20,16 @@ import os
 
 # Create your views here.
 def home(request):
+    #  主页面
     activity = Activity.objects.order_by('?')[:6]
     return render(request, 'home.html', {'activity': activity})
 
 
 def login(request):
+    #  登录
     error = None
     if request.method == 'POST':
+        #  获取用户名密码
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
         if username is None or username == '':
@@ -56,6 +62,7 @@ def logout(request):
 
 @csrf_exempt
 def manager_center(request):
+    #  管理员中心页面处理
     all_org = None
     activity = None
     user = None
@@ -120,6 +127,7 @@ def manager_center(request):
                 return HttpResponse(json.dumps(msg), content_type='application/json')
 
             if revise_id:
+                #  修改活动内容
                 try:
                     act = Activity.objects.get(id=revise_id)
                     topic = request.POST.get('topic', '')
@@ -160,6 +168,7 @@ def manager_center(request):
                     msg = '修改失败'
 
             if file_button:
+                #  提交证明资料
                 act = Activity.objects.get(id=file_button)
                 try:
                     file = request.FILES.get('file')
@@ -174,6 +183,7 @@ def manager_center(request):
                     msg = '提交失败'
 
             if act_file_id:
+                #  下载证明资料
                 act = Activity.objects.get(id=act_file_id)
                 file = BASE_DIR + '/' + str(act.file)
                 file = open(file, 'rb')
@@ -190,10 +200,12 @@ def manager_center(request):
         pass
 
     if page == '4':
+        #  发布活动页面
         all_org = Organization.objects.all()
         if request.method == 'POST':
             try:
                 activity = Activity()
+                #  获取参数
                 activity.aName = request.POST.get('topic', '')
                 activity.beginTime = request.POST.get('time', '')
                 activity.place = request.POST.get('place', '')
